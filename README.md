@@ -1,1 +1,1 @@
-# Clothing-Strore
+# Clothing-Store
