@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: "Montserrat", Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* sidebar */
+#sidebar{
+    background-color: white;
+    overflow: auto;
+    width: 250px;
+    position: fixed;
+    height: 100%;
+    float: left;
+    z-index: 2;
+}
+#sidebar #sidebar-logo{
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    padding: 16px;
+}
+#sidebar #sidebar-logo h1{
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+#sidebar #sidebar-menu{
+    margin: 6.4rem 0;
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+#sidebar #sidebar-menu .menu-items{
+    padding: 0.8rem 1.6rem;
+    list-style-type: none;
+}
+#sidebar #sidebar-menu .menu-items a, #submenu .submenu-items a{
+    color: #757575;
+    text-decoration: none;
+}
+#sidebar-menu #submenu{
+    padding: 1.6rem 1.6rem;
+    list-style-type: none;
+}
+#sidebar-menu #submenu .submenu-items{
+    padding: 0.8rem 1.6rem;
+}
+#sidebar-menu .menu-items:hover, #sidebar-menu #submenu .submenu-items:hover, #sidebar-footer a:hover{
+    color: #000;
+    background-color: #ccc;
+}
+#sidebar-footer a{
+    padding: 0.8rem 1.6rem;
+    text-decoration: none;
+    font-size: 1.6rem;
+    display: block;
+    color: black;
+}
+
+#header{
+    display: none;
+}
+
+/* content */
+#content{
+    width: calc(100% - 250px);
+    float: right;
+}
+img{
+    width: 100%;
+}
+#content #content-jeans{
+    padding: 16px;
+}
+#content-jeans .content-jeans-header{
+    padding: 1rem 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+}
+#content-jeans .content-jeans-header .jeans-icon{
+    float: right;
+}
+.fas.fa-shopping-cart {
+    margin-right: 16px;
+}
+#content #content-jeans .content-jeans-bannar{
+    margin-top: 16px;
+    position: relative;
+}
+#content-jeans .content-jeans-bannar .jeans-bannar-title{
+    padding: 24px 32px;
+    position: absolute;
+    top: 0;
+    color: white;
+}
+.content-jeans-bannar .jeans-bannar-title h1{
+    font-size: 64px;
+    font-weight: 400;
+    margin: 1rem 0;
+}
+.content-jeans-bannar .jeans-bannar-title h2{
+    font-size: 36px;
+    font-weight: 400;
+    margin: 1rem 0;
+}
+.content-jeans-bannar .jeans-bannar-title button{
+    font-size: 18px;
+    font-weight: 400;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    margin: 15px 0;
+    border-style: none;
+    background-color: black;
+    color: white;
+}
+.content-jeans-bannar .jeans-bannar-title button:hover,
+#Subscribe button:hover, 
+#Contact .Contact-columns button:hover{
+    color: black;
+    background-color: #ccc;
+}
+#content-jeans .content-jeans-items{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px 32px;
+    filter: grayscale(75%);
+}
+#content-jeans .content-jeans-items .content-jeans-infitems{
+    position: relative;
+}
+#content-jeans .content-jeans-items .jeans-infitems-title{
+    position: absolute;
+    left: 0;
+    font-size: 15px;
+    display: inline-block;
+    color: white;
+    background-color: black;
+    padding: 0 8px;
+}
+#content-jeans .content-jeans-items .inf-items{
+    font-size: 15px;
+    margin-top: 16px;
+    opacity: 0.8;
+}
+
+#Subscribe{
+    background-color: black;
+    color: white;
+    margin-top: 16px;
+    padding: 32px 16px;
+}
+#Subscribe h1{
+    margin: 10px 0;
+    font-size: 36px;
+    font-weight: 400;
+}
+#Subscribe p{
+    margin: 15px 0;
+    font-size: 15px;
+}
+input{
+    width: 100%;
+    padding: 8px;
+    font-size: inherit;
+}
+#Subscribe button{
+    padding: 8px 16px;
+    font-size: 15px;
+    background-color: #f44336;
+    color: white;
+    border-style: none;
+}
+#Contact{
+    padding: 64px 8px;
+    display: flex;
+    font-size: 12px;
+    background-color: #f1f1f1;
+}
+#Contact p{
+    margin: 12px 0;
+}
+#Contact .Contact-columns{
+    width: calc(100% / 3);
+    text-align: center;
+    padding: 8px;
+}
+#Contact .Contact-columns:last-child{
+    text-align: justify;
+}
+#Contact .Contact-columns h4{
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: 400;
+}
+#Contact .Contact-columns a{
+    color: black;
+}
+#Contact .Contact-columns button{
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 8px 16px;
+    border-style: none;
+}
+#Contact .Contact-columns > i{
+    font-size: 18px;
+}
+@media only screen and (min-width: 1200px) {
+    body{
+        max-width: 1200px;
+        margin: 0 6.3rem;
+    }
+}
+@media only screen and (max-width: 768px){
+    #sidebar{
+        display: none;
+    }
+    #content{
+        width: 100%;
+        margin-top: 76px;
+    }
+    #content-jeans .content-jeans-items{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #header{
+        display: block;
+        background-color: black;
+        color: white;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+    }
+    #header #header-logo{
+        display: inline-block;
+        padding: 24px 16px;
+        font-size: 24px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }
+    #header #header-btn-collapse{
+        padding: 24px 16px;
+        font-size: 24px;
+        float: right;
+    }
+}

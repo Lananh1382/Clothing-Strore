@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Clothing Store</title>
+</head>
+<body>
+    <nav id="sidebar">
+        <div id="sidebar-logo">
+            <h1>Logo</h1>
+        </div>
+        <ul id="sidebar-menu">
+            <li class="menu-items"><a href="#">Shirts</a></li>
+            <li class="menu-items"><a href="#">Dresses</a></li>
+            <li class="menu-items" onclick="checkmenu('submenu')"><a href="#content-jeans">Jeans <i class="fas fa-sort-down"></i></a></li>
+            <ul id="submenu">
+                <li class="submenu-items"><a href="#">Skinny</a></li>
+                <li class="submenu-items"><a href="#">Relaxed</a></li>
+                <li class="submenu-items"><a href="#">Bootcut</a></li>
+                <li class="submenu-items"><a href="#">Straight</a></li>
+            </ul>
+            <li class="menu-items"><a href="#">Jackets</a></li>
+            <li class="menu-items"><a href="#">Gymwear</a></li>
+            <li class="menu-items"><a href="#">Blazers</a></li>
+            <li class="menu-items"><a href="#">Shoes</a></li>
+        </ul>
+        <div id="sidebar-footer">
+            <a href="#">Contact</a>
+            <a href="#">Newsletter</a>
+            <a href="#">Subscribe</a>
+        </div>
+    </nav>
+
+    <!-- menu on small screens -->
+    <header id="header">
+        <div id="header-logo">Logo</div>
+        <div id="header-btn-collapse" onclick="checkmenu('sidebar')">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- content -->
+    <div id="content">
+        <div id="content-jeans">
+            <div class="content-jeans-header">
+                <span>Jeans</span>
+                <span class="jeans-icon"><i class="fas fa-shopping-cart"></i><i class="fas fa-search"></i></span>
+            </div>
+            <div class="content-jeans-bannar">
+                <img src="https://www.w3schools.com/w3images/jeans.jpg" alt="">
+                <div class="jeans-bannar-title">
+                    <h1>New arrivals</h1>
+                    <h2>COLLECTION 2016</h2>
+                    <button>Shop now</button>
+                </div>
+            </div>
+            <p style="margin: 15px 0; font-size: 15px; color: #757575">8 items</p>
+
+            <div class="content-jeans-items">
+                <div class="content-jeans-infitems">
+                    <img src="https://www.w3schools.com/w3images/jeans1.jpg" alt="">
+                    <div class="inf-items">
+                        <p>Ripped Skinny Jeans</p>
+                        <b>$24.99</b>
+                    </div>
+                </div>
+
+                <div class="content-jeans-infitems">
+                    <img src="https://www.w3schools.com/w3images/jeans2.jpg" alt="">
+                    <span class="jeans-infitems-title">New</span>
+                    <div class="inf-items">
+                        <p>Mega Ripped Jeans</p>
+                        <b>$14.99</b>
+                    </div>
+                </div>
+
+                <div class="content-jeans-infitems">
+                    <img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="">
+                    <div class="inf-items">
+                        <p>Washed Skinny Jeans</p>
+                        <b>$20.50</b>
+                    </div>
+                </div>
+
+                <div class="content-jeans-infitems">
+                    <img src="https://www.w3schools.com/w3images/jeans4.jpg" alt="">
+                    <div class="inf-items">
+                        <p>Vintage Skinny Jeans</p>
+                        <b>$25.99</b>
+                    </div>
+                </div>
+
+                <div class="content-jeans-infitems">
+                    <img src="https://www.w3schools.com/w3images/jeans2.jpg" alt="">
+                    <div class="inf-items">
+                        <p>Ripped Skinny Jeans</p>
+                        <b>$24.99</b>
+                    </div>
+                </div>
+
+                <div class="content-jeans-infitems">
+                    <img src="https://www.w3schools.com/w3images/jeans4.jpg" alt="">
+                    <div class="inf-items">
+                        <p>Ripped Skinny Jeans</p>
+                        <b>$24.99</b>
+                    </div>
+                </div>
+
+                <div class="content-jeans-infitems">
+                    <img src="https://www.w3schools.com/w3images/jeans1.jpg" alt="">
+                    <span class="jeans-infitems-title">Sale</span>
+                    <div class="inf-items">
+                        <p>Ripped Skinny Jeans</p>
+                        <b>$24.99</b>
+                    </div>
+                </div>
+
+                <div class="content-jeans-infitems">
+                    <img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="">
+                    <div class="inf-items">
+                        <p>Ripped Skinny Jeans</p>
+                        <b>$24.99</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subscribe -->
+        <div id="Subscribe">
+            <h1>Subscribe</h1>
+            <p>To get special offers and VIP treatment:</p>
+            <p><input type="text" placeholder="Enter e-mail"></p>
+            <button>Subscribe</button>
+        </div>
+
+        <!-- Contact -->
+        <div id="Contact">
+            <div class="Contact-columns">
+                <h4>Contact</h4>
+                <p>Questions? Go ahead.</p>
+                <p><input type="text" placeholder="Name"></p>
+                <p><input type="text" placeholder="Email"></p>
+                <p><input type="text" placeholder="Subject"></p>
+                <p><input type="text" placeholder="Message"></p>
+                <button>Send</button>
+            </div>
+
+            <div class="Contact-columns">
+                <h4>About</h4>
+                <p><a href="#">About us</a></p>
+                <p><a href="#">We're hiring</a></p>
+                <p><a href="#">Support</a></p>
+                <p><a href="#">Find store</a></p>
+                <p><a href="#">Shipment</a></p>
+                <p><a href="#">Payment</a></p>
+                <p><a href="#">Gift card</a></p>
+                <p><a href="#">Return</a></p>
+                <p><a href="#">Help</a></p>
+                
+            </div>
+
+            <div class="Contact-columns">
+                <h4>Store</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Company Name</p>
+                <p><i class="fas fa-phone-alt"></i> 0044123123</p>
+                <p><i class="fas fa-envelope"></i> ex@mail.com</p>
+                <h4>We accept</h4>
+                <p><i class="fab fa-cc-amex"></i> Amex</p>
+                <p><i class="fas fa-credit-card"></i> Credit Card</p>
+                <br>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-snapchat"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin-in"></i>   
+            </div>
+        </div>
+        <script>
+            function checkmenu(id){
+                var checkID = document.getElementById(id);
+                if(checkID.style.display==="none"){
+                    checkID.style.display = "block";
+                }else{
+                    checkID.style.display = "none";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
