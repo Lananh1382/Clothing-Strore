@@ -16,7 +16,7 @@
         <ul id="sidebar-menu">
             <li class="menu-items"><a href="#">Shirts</a></li>
             <li class="menu-items"><a href="#">Dresses</a></li>
-            <li class="menu-items" onclick="checkmenu('submenu')"><a href="#content-jeans">Jeans <i class="fas fa-sort-down"></i></a></li>
+            <li class="menu-items" onclick=""><a href="#content-jeans">Jeans <i class="fas fa-sort-down"></i></a></li>
             <ul id="submenu">
                 <li class="submenu-items"><a href="#">Skinny</a></li>
                 <li class="submenu-items"><a href="#">Relaxed</a></li>
@@ -38,11 +38,11 @@
     <!-- menu on small screens -->
     <header id="header">
         <div id="header-logo">Logo</div>
-        <div id="header-btn-collapse" onclick="checkmenu('sidebar')">
+        <div id="header-btn-collapse" onclick="openMenu()">
             <i class="fas fa-bars"></i>
         </div>
     </header>
-
+    <div id="overlay" onclick="closeMenu()"></div>
     <!-- content -->
     <div id="content">
         <div id="content-jeans">
@@ -181,14 +181,22 @@
             </div>
         </div>
         <script>
-            function checkmenu(id){
-                var checkID = document.getElementById(id);
-                if(checkID.style.display==="none"){
-                    checkID.style.display = "block";
-                }else{
-                    checkID.style.display = "none";
-                }
+            function closeMenu(){
+                document.getElementById("overlay").style.display = "none";
+                document.getElementById("sidebar").style.display = "none";
             }
+            function openMenu(){
+                document.getElementById("overlay").style.display = "block";
+                document.getElementById("sidebar").style.display = "block";
+            }
+            // function checkmenu(id){
+            //     var checkID = document.getElementById(id);
+            //     if(checkID.style.display==="none"){
+            //         checkID.style.display = "block";
+            //     }else{
+            //         checkID.style.display = "none";
+            //     }
+            // }
         </script>
     </div>
 </body>
