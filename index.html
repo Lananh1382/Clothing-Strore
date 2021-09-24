@@ -16,7 +16,7 @@
         <ul id="sidebar-menu">
             <li class="menu-items"><a href="#">Shirts</a></li>
             <li class="menu-items"><a href="#">Dresses</a></li>
-            <li class="menu-items" onclick=""><a href="#content-jeans">Jeans <i class="fas fa-sort-down"></i></a></li>
+            <li class="menu-items" onclick="checkSubMenu()"><a href="#content-jeans">Jeans <i class="fas fa-sort-down"></i></a></li>
             <ul id="submenu">
                 <li class="submenu-items"><a href="#">Skinny</a></li>
                 <li class="submenu-items"><a href="#">Relaxed</a></li>
@@ -189,14 +189,14 @@
                 document.getElementById("overlay").style.display = "block";
                 document.getElementById("sidebar").style.display = "block";
             }
-            // function checkmenu(id){
-            //     var checkID = document.getElementById(id);
-            //     if(checkID.style.display==="none"){
-            //         checkID.style.display = "block";
-            //     }else{
-            //         checkID.style.display = "none";
-            //     }
-            // }
+            function checkSubMenu(){
+                var check = document.getElementById("submenu");
+                if(check.style.display==="none"){
+                    check.style.display = "block";
+                }else{
+                    check.style.display = "none";
+                }
+            }
         </script>
     </div>
 </body>
