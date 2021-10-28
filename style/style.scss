@@ -1,0 +1,321 @@
+
+$white: white;
+$black: black;
+$gray: #ccc;
+$padding: 0.8rem 1.6rem;
+
+@mixin decoration($color: #757575) {
+    color: $color;
+    text-decoration: none;
+}
+@mixin text($size: 36px,$margin: 1rem 0, $weight: 400) {
+    font-size: $size;
+    font-weight: $weight;
+    margin: $margin;
+}
+@mixin mq($breakpoint, $rule) {
+    $mq-breakpoints:( 
+        'xs': 320px, 
+        'sm': 480px, 
+        'md': 768px, 
+        'mdplus': 941px,
+        'lg': 1120px );
+    
+    $breakpoint: map-get($mq-breakpoints, $breakpoint);
+    
+    @if $rule == max{
+        @media only screen and (max-width: $breakpoint){
+            @content;
+        }
+    }
+    @else if $rule == min{
+        @media only screen and (min-width: $breakpoint){
+            @content;
+        }
+    }
+    @else{
+        @error "Unknown rule #{$rule}";
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: "Montserrat", Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    @include mq('lg', min){
+        max-width: 1200px;
+        margin: 0 6.3rem;
+    }
+}
+
+/* sidebar */
+#sidebar{
+    background-color: $white;
+    display: block;
+    overflow: auto;
+    width: 250px;
+    position: fixed;
+    height: 100%;
+    float: left;
+    z-index: 5;
+    @include mq('md', max){
+        display: none;
+    }
+
+    &-logo{
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        padding: 16px;
+        h1{
+            font-weight: 500;
+            margin: 1rem 0;
+        }
+    }
+
+    &-menu{
+        @include text(1.8rem, 6.4rem 0, bolder);
+        .menu-items{
+            padding: $padding;
+            list-style-type: none;
+            a{
+                @include decoration();
+            }
+            &:hover{
+                @extend %sidebar-hover;
+            }
+        }
+        #submenu{
+            padding: 1.6rem 1.6rem;
+            list-style-type: none;
+            .submenu-items{
+                padding: $padding;
+                a{
+                    @include decoration();
+                }
+                &:hover{
+                    @extend %sidebar-hover;
+                }
+            }
+        }
+    }
+
+    &-footer{
+        a{
+            padding: $padding;
+            @include decoration($black);
+            font-size: 1.6rem;
+            display: block;
+            &:hover{
+                @extend %sidebar-hover;
+            }
+        }
+    }
+}
+
+%sidebar-hover{
+    color: #000;
+    background-color: $gray;
+}
+#header{
+    display: none;
+    @include mq('md', max){
+        display: block;
+        background-color: $black;
+        color: $white;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        &-logo{
+            display: inline-block;
+            padding: 24px 16px;
+            font-size: 24px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        &-btn-collapse{
+            padding: 24px 16px;
+            font-size: 24px;
+            float: right;
+        }
+    }
+}
+@include mq('md', max){
+    #overlay{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        z-index: 2;
+        display: none;
+        cursor: pointer;
+    }
+}
+img{
+    width: 100%;
+}
+
+/* content */
+#content{
+    width: calc(100% - 250px);
+    float: right;
+    @include mq('md', max){
+        width: 100%;
+        margin-top: 76px;
+    }
+    &-jeans{
+        padding: 16px;
+        .content-jeans-header{
+            padding: 1rem 0;
+            font-family: "Montserrat", sans-serif;
+            font-size: 2.4rem;
+            font-weight: 400;
+            .jeans-icon{
+                float: right;
+                .fas.fa-shopping-cart {
+                    margin-right: 16px;
+                }
+            }
+        }
+        .content-jeans-bannar{
+            margin-top: 16px;
+            position: relative;
+            .jeans-bannar-title{
+                padding: 24px 32px;
+                position: absolute;
+                top: 0;
+                color: $white;
+                h1{
+                    @include text(64px);
+                }
+                h2{
+                    @include text();
+                }
+                button{
+                    @include text(18px, 15px 0);
+                    padding: 12px 24px;
+                    text-transform: uppercase;
+                    border-style: none;
+                    background-color: $black;
+                    color: $white;
+                    &:hover{
+                        @extend %btn-hover;
+                    }
+                }
+            }
+        }
+
+        .content-jeans-items{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 16px 32px;
+            filter: grayscale(75%);
+            @include mq('md', max){
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .content-jeans-infitems{
+                position: relative;
+                .jeans-infitems-title{
+                    position: absolute;
+                    left: 0;
+                    font-size: 15px;
+                    display: inline-block;
+                    color: $white;
+                    background-color: $black;
+                    padding: 0 8px;
+                }
+                .inf-items{
+                    font-size: 15px;
+                    margin-top: 16px;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+
+%btn-hover{
+    color: $black;
+    background-color: $gray;
+}
+input{
+    width: 100%;
+    padding: 8px;
+    font-size: inherit;
+}
+/* Subscribe */
+#subscribe{
+    background-color: $black;
+    color: $white;
+    margin-top: 16px;
+    padding: 32px 16px;
+    
+    h1{
+        @include text();
+    }
+    p{
+        margin: 15px 0;
+        font-size: 15px;
+    }
+    button{
+        padding: $padding;
+        font-size: 15px;
+        background-color: #f44336;
+        color: $white;
+        border-style: none;
+        &:hover{
+            @extend %btn-hover;
+        }
+    }
+}
+
+/* Contact */
+#contact{
+    padding: 64px 8px;
+    display: flex;
+    font-size: 12px;
+    background-color: #f1f1f1;
+
+    p{
+        margin: 12px 0;
+    }
+    .contact-columns{
+        width: calc(100% / 3);
+        text-align: center;
+        padding: 8px;
+        &:last-child{
+            text-align: justify;
+        }
+        > i{
+            font-size: 18px;
+        }
+    }
+    h4{
+        @include text(20px)
+    }
+    a{
+        color: $black;
+    }
+    button{
+        background-color: $black;
+        color:$white;
+        width: 100%;
+        padding: $padding;
+        border-style: none;
+        &:hover{
+            @extend %btn-hover;
+        }
+    }
+}
+
+
+
+
+
